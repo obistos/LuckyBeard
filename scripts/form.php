@@ -8,7 +8,7 @@ function test_input($data) {
 }
 
 function sendEmails() {
-    $myemail = "obedr@vendatech.co.za"; //Configure your server email address
+    $emailFrom = "obedr@provisionartz.co.za"; //Configure your server email address
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
@@ -26,7 +26,7 @@ function sendEmails() {
             $company = test_input($_POST["company"]);
             $role = test_input($_POST["role"]);
     
-            $to = $myemail.','.$email;
+            $to = 'jared.bouwer@luckybeard.com';
             $email_subject = "Request form";
             
             $htmlContent = ' 
@@ -61,7 +61,7 @@ function sendEmails() {
             $headers = "MIME-Version: 1.0" . "\r\n"; 
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
         
-            $headers .= "From: $myemail\n";
+            $headers .= "From: $emailFrom\n";
             $headers .= "BCC: obistos@gmail.com\n";
             $headers .= "Reply-To: $email";
         
