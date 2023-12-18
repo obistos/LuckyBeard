@@ -1,0 +1,148 @@
+.lb-primary {
+    background-color: #6483e3;
+    color: #ffffff;
+}
+
+.navbar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    z-index: 99;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 90px;
+    border: none;
+}
+
+.nav-item a {
+    margin-right: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo-wrapper {
+    padding-top: 20px;
+}
+
+.header {
+    padding-top: 100px;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url('../img/vw-scaled.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header-title {
+    margin: 0 auto;
+    margin-top: 30vh;
+    width: 50%;
+}
+
+.download-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download-buttons a {
+    margin-right: 20px;
+    text-align: center;
+}
+
+.download-buttons a img {
+    width: 100%;
+    height: 60px;
+}
+
+.scroll-arrow {
+    position: relative;
+    width: 70px;
+    left: 48%;
+    margin-top: 70px;
+    z-index: 1;
+}
+
+.blue-bg-top {
+    position: absolute;
+    bottom: -1px;
+}
+
+.blue-bg-top,
+.blue-bg-bottom {
+    width: 100%;
+}
+
+.section .row .col {
+    padding: 50px;
+}
+
+.section .row .col img {
+    width: 100%;
+}
+
+.section-text {
+    color: #ffffff;
+}
+
+.sec-1 {
+    background-color: #6483e3;
+    min-height: 80vh;
+}
+
+.sec-2 {
+    min-height: 100vh;
+    background-image: url('../img//reinhart-julian-_BK0NirjdG8.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section .row .sec-2-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.sec-2-header h2 {
+    font-size: 4rem;
+}
+
+.section .row .sec-2-block {
+    padding: 15px;
+}
+
+.sec-2-block {
+    background-color: #ffffff;
+    margin-right: 10px;
+    color: #000000;
+    border-radius: 5px;
+    height: auto;
+}
+
+.sec-2-block h6 {
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.footer {
+    height: 70px;
+    padding-top: 20px;
+    background-color: #6f7889;
+}
+
+.footer-nav li {
+    display: inline-block;
+    color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    list-style: none;
+    border-right: 1px solid #cccccc;
+}
+
+.footer-nav li:last-child {
+    border: none;
+}
