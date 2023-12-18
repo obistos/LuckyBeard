@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Demo </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg lb-primary">
+        <div class="container">
+            <div class="logo-wrapper">
+                <a class="logo" href="/"> <img src="img/logo.png" height="90" class="logo-img" alt=""> </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="ti-menu"></i></span> </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">For buyers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">For Sellers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="request.html">Request a demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="lb-primary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6 text-center section-text">
+                    <h1>Request a demo</h1>
+                    <p>If you are a professional, we offer a desktop admin platform, to allow a better and faster management of your whole business</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-6 form-wrapper">
+                <form class="request-form" id="form">
+                    <h2 class="form-title mb-5">Please fill in your application</h2>
+                    <div class="mb-3">
+                      <input name="fullname" type="text" class="form-control" placeholder="Your name" required>
+                    </div>
+                    <div class="mb-3">
+                      <input name="email" type="email" class="form-control" placeholder="Your email" required>
+                    </div>
+                    <div class="mb-3">
+                      <input name="mobile" type="text" class="form-control" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="mb-3">
+                      <input name="company" type="text" class="form-control" placeholder="Company" required>
+                    </div>
+                    <div class="mb-3">
+                      <select name="role" class="form-select" required>
+                        <option selected>Role in the company</option>
+                        <option value="Director">Director</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Developer">Developer</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn lb-primary submit-btn">Request</button>
+                    </div>
+                    <div class="alert alert-success hide" id="thanks">
+                        Thanks for contacting us, we'll be in touch soon!
+                    </div>
+                    <div class="alert alert-danger hide" id="fail">
+                        Your request was incomplete. Please try again later.
+                    </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <ul class="footer-nav">
+                <li>Dealr Automotive Limited</li>
+                <li>Registration number: 629444</li>
+                <li>15 Harcourt street, St. Kevin's, Dublin 2 D02 XY47, Dublin, Ireland</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

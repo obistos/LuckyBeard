@@ -1,7 +1,3 @@
-.lb-primary {
-    background-color: #6483e3;
-    color: #ffffff;
-}
 
 .navbar {
     position: absolute;
@@ -26,6 +22,12 @@
 
 .logo-wrapper {
     padding-top: 20px;
+}
+
+.lb-primary {
+    background: #6483e3;
+    background-color: #6483e3;
+    color: #ffffff;
 }
 
 .header {
@@ -145,4 +147,55 @@
 
 .footer-nav li:last-child {
     border: none;
+}
+
+/****** Request for Demo page *******/
+main {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+main h1 {
+    font-weight: bold;
+}
+
+.form-wrapper {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+.form-title {
+    color: #000000;
+    font-weight: bold;
+}
+
+.request-form .form-control,
+.request-form .form-select {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 2.5;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 70px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    border: 1px solid #6483e3;
+    color: #000000;
+}
+.submit-btn:checked {
+    background-color: #6483e3;
+    color: #ffffff;
+}
+
+.hide {
+    display: none;
 }
