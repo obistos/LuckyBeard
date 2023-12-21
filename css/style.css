@@ -187,13 +187,16 @@ main h1 {
     font-weight: bold;
 }
 
-.submit-btn:hover {
-    border: 1px solid #6483e3;
-    color: #000000;
-}
+.submit-btn:hover,
+.submit-btn:disabled,
 .submit-btn:checked {
     background-color: #6483e3;
     color: #ffffff;
+}
+
+.error {
+    color: red;
+    padding: 5px 10px;
 }
 
 .hide {

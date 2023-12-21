@@ -16,15 +16,15 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="ti-menu"></i></span> </button>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">For buyers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">For Sellers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#buyers">For buyers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#sellers">For Sellers</a></li>
                     <li class="nav-item"><a class="nav-link" href="request.html">Request a demo</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <main class="lb-primary">
-        <div class="container">
+        <div class="container mb-5">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center section-text">
                     <h1>Request a demo</h1>
@@ -37,28 +37,28 @@
               <div class="col-md-6 form-wrapper">
                 <form class="request-form" id="form">
                     <h2 class="form-title mb-5">Please fill in your application</h2>
-                    <div class="mb-3">
-                      <input name="fullname" type="text" class="form-control" placeholder="Your name" required>
+                    <div class="form-group mb-3">
+                      <input id="fullname" name="fullname" type="text" class="form-control" placeholder="Your name">
                     </div>
-                    <div class="mb-3">
-                      <input name="email" type="email" class="form-control" placeholder="Your email" required>
+                    <div class="form-group mb-3">
+                      <input id="email" name="email" type="email" class="form-control" placeholder="Your email">
                     </div>
-                    <div class="mb-3">
-                      <input name="mobile" type="text" class="form-control" placeholder="Mobile Number" required>
+                    <div class="form-group mb-3">
+                      <input id="mobile" name="mobile" type="text" class="form-control" placeholder="Mobile Number">
                     </div>
-                    <div class="mb-3">
-                      <input name="company" type="text" class="form-control" placeholder="Company" required>
+                    <div class="form-group mb-3">
+                      <input id="company" name="company" type="text" class="form-control" placeholder="Company">
                     </div>
-                    <div class="mb-3">
-                      <select name="role" class="form-select" required>
-                        <option selected>Role in the company</option>
-                        <option value="Director">Director</option>
-                        <option value="Manager">Manager</option>
+                    <div class="form-group mb-3">
+                      <select id="role" name="role" class="form-select">
+                        <option value="">Role in the company</option>
                         <option value="Developer">Developer</option>
+                        <option value="QA Analyst">QA Analyst</option>
+                        <option value="Business Analyst">Business Analyst</option>
                       </select>
                     </div>
-                    <div class="mb-3">
-                        <button type="submit" class="btn lb-primary submit-btn">Request</button>
+                    <div class="form-group mb-3">
+                        <button id="submit" type="submit" class="btn lb-primary submit-btn" disabled>Request</button>
                     </div>
                     <div class="alert alert-success hide" id="thanks">
                         Thanks for contacting us, we'll be in touch soon!
@@ -82,6 +82,7 @@
     </footer>
 
     <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </body>
