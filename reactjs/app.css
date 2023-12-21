@@ -1,0 +1,8 @@
+ul.posts {
+    margin-top: 50px;
+}
+
+ul.posts li {
+    line-height: 30px;
+    font-weight: bold;
+}
