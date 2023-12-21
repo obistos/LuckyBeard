@@ -55,14 +55,10 @@ let template = `
             <p className="error">{errors.role}</p>
         </div>
         <div className="form-group mb-3">
-            <button type="submit" className="btn lb-primary submit-btn">Request</button>
+            <button type="submit" className="btn lb-primary submit-btn" disabled={!isButtonDisabled}>Request</button>
         </div>
-        <div className="alert alert-success hide" id="thanks">
-            Thanks for contacting us, we'll be in touch soon!
-        </div>
-        <div className="alert alert-danger hide" id="fail">
-            Your request was incomplete. Please try again later.
-        </div>
+        { alert.success ? <div className="alert alert-success">Thanks for contacting us, we'll be in touch soon!</div> : null }
+        { alert.fail ? <div className="alert alert-danger">Your request was incomplete. Please try again later.</div> : null }
     </form>
 `;
 
@@ -75,7 +71,11 @@ export default function RequestForm() {
         role: ""
     });
     const [errors, setErrors] = React.useState({});
-    const [submitting, setSubmitting] = React.useState(false);
+    const [isButtonDisabled, setButtonDisabled] = React.useState(false);
+    const [alert, setAlert] = React.useState({
+        success: false,
+        fail: false
+    });
   
     const validateValues = (input) => {
       let errors = {};
@@ -88,7 +88,7 @@ export default function RequestForm() {
         if (inputValue.length > 50) {
             errors.fullname = "Maximum length has been exceeded.";
         }
-        if (/^[a-zA-Z]+$/.test(inputValue) !== true) {
+        if (/^([a-zA-Z]+\s)*[a-zA-Z]+$/.test(inputValue) !== true) {
             errors.fullname = "Please only fill in letters.";
         }
     }
@@ -127,7 +127,7 @@ export default function RequestForm() {
         if (inputValue.length > 50) {
             errors.company = "Maximum length has been exceeded.";
         }
-        if (/^[a-zA-Z]+$/.test(inputValue) !== true) {
+        if (/^([a-zA-Z]+\s)*[a-zA-Z]+$/.test(inputValue) !== true) {
             errors.company = "Please only fill in letters.";
         }
     }
@@ -149,18 +149,47 @@ export default function RequestForm() {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      setSubmitting(true);
-    };
-  
-    const finishSubmit = () => {
-      console.log(inputFields);
-    };
-  
-    React.useEffect(() => {
-      if (Object.keys(errors).length === 0 && submitting) {
-        finishSubmit();
+      const headers = {
+        'Content-Type': 'multipart/form-data'
       }
-    }, [errors]);
+      axios.post('../../post.php', inputFields, {headers})
+        .then(response => {
+            if(response.status === 200) {
+                setAlert({
+                    success: true,
+                    fail: false
+                });
+                setInputFields({
+                    fullname: "",
+                    email: "",
+                    mobile: "",
+                    company: "",
+                    role: ""
+                });
+                setTimeout(() => {
+                    setAlert({
+                        success: false,
+                        fail: false
+                    });
+                }, 5000);
+            }
+            else if(response.status !== 200) setAlert({
+                success: false,
+                fail: true
+            })
+        });
+    };
+
+    const notEmpty = (arr) => {
+        return arr.every((item) => item !== '');
+    }
+
+    React.useEffect(() => {
+        const em = notEmpty(Object.values(inputFields));
+        const er = Object.keys(errors).length === 0;
+        if (em && er) setButtonDisabled(true);
+        else setButtonDisabled(false);
+    }, [inputFields,errors]);
 
     return (
         eval(Babel.transform(template, { presets: ['es2017', 'react'] }).code)

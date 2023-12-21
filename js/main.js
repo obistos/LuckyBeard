@@ -18,7 +18,7 @@ $(document).ready(function () {
             fullname.after('<p class="error fullname-error">Maximum length has been exceeded.</p>');
             return;
         }
-        if(/^[a-zA-Z]+$/.test(fullnameValue) !== true) {
+        if(/^([a-zA-Z]+\s)*[a-zA-Z]+$/.test(fullnameValue) !== true) {
             fullname.after('<p class="error fullname-error">Please only fill in letters.</p>');
             return;
         } else {
@@ -78,7 +78,7 @@ $(document).ready(function () {
             company.after('<p class="error company-error">Maximum length has been exceeded.</p>');
             return;
         }
-        if(/^[a-zA-Z]+$/.test(companyValue) !== true) {
+        if(/^([a-zA-Z]+\s)*[a-zA-Z]+$/.test(companyValue) !== true) {
             company.after('<p class="error company-error">Please only fill in letters.</p>');
             return;
         } else {
